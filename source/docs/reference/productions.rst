@@ -2,7 +2,7 @@ Productions and Expansions
 ==========================
 
 A **production** is a grammar rule. Each production describes how to match one
-syntactic construct, and CongoCC turns each one into a method on the generated
+syntactic construct, and CongoCC turns each one into a method in the generated
 parser. The body of a production is an **expansion**: a pattern built from
 token references, calls to other productions, and the choice, grouping, and
 repetition operators. This chapter describes the syntax of productions and
@@ -35,8 +35,8 @@ Terminals
 
 Non-terminals
    The name of another production, optionally with arguments —
-   ``Expression`` or ``ArgumentList(true)``. This calls that production at
-   that point.
+   ``Expression`` or ``ArgumentList(true)``. This calls the named production at
+   that point in the parse.
 
 Sequences
    Writing units one after another matches them in order:
@@ -58,7 +58,7 @@ Form                Meaning
 ``( … )+``          one or more occurrences
 ==================  =====================================================
 
-For example, an optional ``else`` clause and a list of comma-separated
+For example, an optional ``else`` clause and an optional list of comma-separated
 arguments:
 
 .. code-block:: text
@@ -70,8 +70,9 @@ arguments:
 Embedded code and actions
 -------------------------
 
-Braces enclose **embedded code** written in the target language. Two positions
-are common: a *declaration prologue* immediately after the colon, holding local
+Braces enclose **embedded code** written in the target language. Two types of code
+embeddings are defined based on their position: a *declaration prologue* 
+immediately after the colon, holding local
 declarations for the production, and *actions* interspersed in the expansion,
 which run when the parser reaches that point.
 
@@ -110,8 +111,8 @@ return type, the generated method returns a value, so a caller can write:
 
    Embedded code ties a grammar to one target language. A grammar that uses
    Java actions like the one above generates a working parser only for Java. To
-   keep a grammar usable across all four target languages, keep target-language
-   code out of it, or provide per-language variants; see the
+   keep a grammar usable across all four target languages, avoid embedding
+   target-language code in productions, or provide per-language variants; see the
    :doc:`Target Language Guide </docs/targets/targets>`.
 
 Full declaration syntax
@@ -131,7 +132,7 @@ access modifier
 
 return type and parameters
    A production may declare a return type and a formal parameter list, exactly
-   as the ``Sum`` example returns ``int``. Parameters let one production pass
+   as the above ``Sum`` example returns ``int``. Parameters let one production pass
    information to another: ``ArgumentList(boolean allowEmpty)`` is called as
    ``ArgumentList(true)``.
 
@@ -154,7 +155,7 @@ starting lexical state
 Lookahead and assertions in expansions
 --------------------------------------
 
-Two further kinds of unit may appear in an expansion but are described
+Two further types of descriptors may appear in an expansion, but they are discussed
 elsewhere because they govern *how* the parser matches rather than *what* it
 matches:
 
