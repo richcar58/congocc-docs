@@ -1,7 +1,7 @@
 Lexical Specification
 =====================
 
-Before the parser can apply grammar productions, the **lexer** (also called the
+Before a parser can apply grammar productions, the **lexer** (also called the
 tokenizer or scanner) turns the raw input into a stream of *tokens*. The
 lexical specification is the part of a grammar that declares those tokens. This
 chapter covers how tokens are declared, the regular-expression syntax used to
@@ -74,7 +74,7 @@ String and character literals
    written with single quotes — ``'x'`` — and a single-quoted string of two or
    more characters (``'abc'``) is also accepted. Standard escapes apply,
    including ``\n``, ``\t``, ``\\``, ``\"`` and Unicode escapes such as
-   ````.
+   ``\u0041``.
 
 Named tokens
    ``<NAME : pattern>`` gives a token type the name ``NAME``. The name is what
