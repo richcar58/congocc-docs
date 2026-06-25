@@ -1,17 +1,26 @@
 Overview
 ========
 
-CongoCC is a parser generator. You describe a language in a **grammar file**,
+`CongoCC <https://parsers.org>`_ is a parser generator. Users describe a language in a **grammar file**,
 and CongoCC generates source code — a lexer, a parser, and a set of syntax-tree
-classes — that reads text in that language and turns it into a tree you can
-process. It is a recursive-descent generator in the JavaCC tradition, and it
-generates code in **Java, Python, C#, and Rust** from the same grammar.
+classes — that reads text in that language and generates an abstract syntax tree that 
+your application can then process. It is a recursive-descent generator that can produce 
+parsers in **Java**, **Python**, **C#**, and **Rust** from the same grammar.
+
+Short History
+-------------
+
+CongoCC was originally developed as a fork of `JavaCC21 <https://github.com/javacc21/javacc21>`_, 
+which was itself a fork of the original `JavaCC <https://javacc.github.io/javacc/>`_.  ConngoCC's goal is
+to provide a more modern and flexible approach to parser generation. It has since evolved 
+to support multiple target languages and has been used in various projects requiring 
+custom language processing.  CongoCC source code is `here <https://github.com/congo-cc/congo-parser-generator>`_.
 
 The processing model
 --------------------
 
-There are two phases to keep distinct: generation, which you run once when the
-grammar changes, and parsing, which the generated code does at run time.
+There are two distinct processing phases: *generation*, which you run once when the
+grammar changes, and *parsing*, which the generated parser code does at run time.
 
 **Generation.** You run CongoCC on a ``.ccc`` grammar file (see
 :doc:`invocation`). It produces, in your chosen target language:
@@ -57,7 +66,7 @@ Node / syntax tree
    (:doc:`tree-building`).
 
 Lexical state
-   A mode the lexer is in, determining which tokens it can currently match
+   A mode the lexer is in that determines which tokens it can currently match
    (:doc:`lexical`).
 
 Lookahead
@@ -71,7 +80,7 @@ The chapters move from running the tool, through the grammar language, to the
 code it generates:
 
 - :doc:`invocation` and :doc:`grammar-file` — running CongoCC and the
-  structure of a grammar file, including ``INCLUDE`` and the preprocessor.
+  structure of a grammar file, including the preprocessor.
 - :doc:`lexical`, :doc:`productions`, and :doc:`disambiguation` — the core
   grammar language: tokens, productions, and lookahead.
 - :doc:`tree-building` and :doc:`injection` — shaping the syntax tree and
@@ -87,4 +96,4 @@ code it generates:
 
 For tutorials and task-oriented guidance, see the
 :doc:`User Guide </docs/userguide/userguide>`; for what differs between target
-languages, the :doc:`Target Language Guide </docs/targets/targets>`.
+languages, see the :doc:`Target Language Guide </docs/targets/targets>`.
