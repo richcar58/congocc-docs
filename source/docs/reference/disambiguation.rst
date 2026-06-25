@@ -3,9 +3,9 @@ Disambiguation
 
 CongoCC generates a deterministic recursive-descent parser. At each **choice
 point** — a ``|`` alternation, an optional ``[ … ]``, or a loop ``( … )*`` /
-``( … )+`` — the parser must decide what to do by looking at the upcoming
-input. By default it decides on the strength of the next single token. When one
-token is not enough to tell the alternatives apart, you give the parser extra
+``( … )+`` — the parser must decide what to do by looking at upcoming
+input. By default, it decides using the next single token. When one
+token is not enough to tell the alternatives apart, you can give the parser license to
 **lookahead**. This chapter describes the choice-point model and the constructs
 that control lookahead, along with the related ``ASSERT`` / ``ENSURE`` and
 ``FAIL`` features.

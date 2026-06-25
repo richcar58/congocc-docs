@@ -37,7 +37,7 @@ parsing ``a=1 b=22`` produces:
 Each ``Pair`` production became a ``Pair`` node, each token (including the
 implicit ``"="`` and the final ``EOF``) is a node, and the whole thing is
 rooted at a ``Config`` node. Notice there is **no** ``Value`` node even though
-``Value`` is a production — that is smart node creation, described next.
+``Value`` is a production — that is the effect of smart node creation, described next.
 
 Smart node creation
 -------------------
@@ -196,7 +196,8 @@ on the assertion machinery in :doc:`disambiguation`.
 Coming from JJTree
 ------------------
 
-CongoCC's tree building replaces the separate JJTree preprocessor. There is no
+CongoCC's tree building replaces the separate `JJTree <https://javacc.github.io/javacc/documentation/jjtree.html>`_ 
+preprocessor from `JavaCC <https://javacc.github.io/javacc/documentation/>`_. There is no
 ``jjtThis``, no ``SimpleNode``, and no generated visitor interface to implement;
 tree building is on by default rather than opt-in, and the node API is the rich
 ``Node`` interface shown above. The full mapping is in :doc:`appendices/legacy`.
