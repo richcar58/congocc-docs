@@ -208,5 +208,4 @@ code and the surrounding tooling differ. See the
 :doc:`Target Language Guide </docs/targets/targets>`.
 
 Next, :doc:`calculator` builds a grammar with real structure — operator
-precedence, recursion, and choices that need :doc:`lookahead
-</docs/reference/disambiguation>` to resolve.
+precedence and recursion — that evaluates an expression as it parses.
