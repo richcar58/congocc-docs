@@ -5,8 +5,7 @@ The classes CongoCC generates — the parser, the lexer, the node types — are
 often most useful with some of your own code added to them: a helper method on
 a node, a field on the parser, an extra interface. The ``INJECT`` statement adds
 that code **from the grammar**, so it lands in the generated files without your
-ever editing them by hand and survives every regeneration. It replaces the
-edit-the-generated-code workflow of legacy JavaCC.
+ever editing them by hand and survives every regeneration. 
 
 A first injection
 -----------------
