@@ -81,11 +81,26 @@ JAR from source. You will need **Git**, a **JDK 17+**, and **Apache Ant**:
    $ ant
 
 The default Ant target builds the project and produces ``congocc.jar`` in the
-repository root. To build and run the test suite instead, use:
+repository root.  To build and run the test suite instead, use:
 
 .. code-block:: console
 
    $ ant test
+
+See the top-level ``build.xml`` file for all possible build targets.
+
+Optionally Building Rust Examples
+---------------------------------
+
+Rust examples and test code are not built by default. If the Rust toolchain is available, 
+you can build all artifacts from scratch, including Rust artifacts, by using:
+
+.. code-block:: console
+
+   $ ant clean -Drust.enabled=true
+   $ ant test -Drust.enabled=true
+
+See :doc:`Rust Target Language Guide </docs/targets/rust>` for more information about Rust support.
 
 Editor support
 --------------
