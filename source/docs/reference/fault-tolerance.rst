@@ -6,7 +6,7 @@ Fault-Tolerant Parsing
    This feature is **experimental**. The syntax and behavior described here may
    change, and some capabilities are incomplete.
 
-Ordinarily a parser stops at the first input it cannot match. A
+Ordinarily, a parser stops at the first input it cannot match. A
 *fault-tolerant* parser instead does its best to recover and keep going, so
 that even incomplete or incorrect input yields a usable tree. This is what
 editors, IDEs, and language tooling need: the code being parsed is constantly
