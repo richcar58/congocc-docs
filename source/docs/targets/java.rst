@@ -3,8 +3,7 @@ Java
 
 Java is CongoCC's default target — ``-lang java`` is assumed when no language is
 given — and the most thoroughly exercised. Because the generated-API reference
-is written against the Java output, this chapter is brief: it points there and
-notes the Java-specific particulars.
+is written against the Java output, this chapter briefly notes Java-specific particulars.
 
 Output layout
 -------------
