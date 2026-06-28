@@ -31,9 +31,11 @@ grammar changes, and *parsing*, which the generated parser code does at run time
 
 **Parsing.** At run time the generated code works in the classic two stages:
 
-.. code-block:: text
+.. figure:: /_static/pipeline.svg
+   :alt: input text, to the lexer, to tokens, to the parser, to a syntax tree.
+   :align: center
 
-   input text  ──▶  lexer  ──▶  token stream  ──▶  parser  ──▶  syntax tree
+   At run time the generated lexer and parser turn input text into a syntax tree.
 
 The lexer turns characters into a stream of **tokens** (numbers, identifiers,
 punctuation, …). The parser consumes that stream according to the grammar's

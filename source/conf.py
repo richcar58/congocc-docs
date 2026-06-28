@@ -4,6 +4,11 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import datetime
+import sys
+from pathlib import Path
+
+# Make the local extensions under source/_ext importable.
+sys.path.insert(0, str(Path(__file__).resolve().parent / '_ext'))
 
 # -- Project information -----------------------------------------------------
 
@@ -22,6 +27,7 @@ version = ''
 extensions = [
     'sphinx.ext.todo',             # track drafting gaps with `.. todo::`
     'sphinx.ext.autosectionlabel',  # let `:ref:` target section titles (construct index)
+    'ccc_lexer',                    # Pygments lexer for `.. code-block:: ccc`
 ]
 
 templates_path = ['_templates']

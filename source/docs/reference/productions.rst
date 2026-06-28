@@ -15,7 +15,7 @@ A first production
 In its most common form a production is just a name, a colon, an expansion, and
 a semicolon:
 
-.. code-block:: text
+.. code-block:: ccc
 
    NumberList : <NUMBER> ( <COMMA> <NUMBER> )* <EOF> ;
 
@@ -61,7 +61,7 @@ Form                Meaning
 For example, an optional ``else`` clause and an optional list of comma-separated
 arguments:
 
-.. code-block:: text
+.. code-block:: ccc
 
    IfStatement : <IF> "(" Expression ")" Statement [ <ELSE> Statement ] ;
 
@@ -80,7 +80,7 @@ The following grammar parses a sum of integers and actually evaluates it. The
 production has a **return type** (``int``), a prologue declaring two locals, and
 actions that accumulate the total:
 
-.. code-block:: text
+.. code-block:: ccc
 
    PARSER_PACKAGE = "prod.test";
 

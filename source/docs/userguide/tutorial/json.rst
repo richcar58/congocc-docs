@@ -12,7 +12,7 @@ The grammar, part by part
 
 It opens with settings:
 
-.. code-block:: text
+.. code-block:: ccc
 
    PARSER_PACKAGE = "org.parsers.json";
    NODE_PACKAGE   = "org.parsers.json.ast";
@@ -27,7 +27,7 @@ harness that parses ``.json`` files with the ``Root`` production — see
 Whitespace is skipped, and the punctuation tokens are grouped under a single
 ``Delimiter`` node class with a ``#`` annotation:
 
-.. code-block:: text
+.. code-block:: ccc
 
    SKIP : <WHITESPACE : (" "| "\t"| "\n"| "\r")+>;
 
@@ -43,7 +43,7 @@ its own node type (``#BooleanLiteral``, ``#NumberLiteral``, …), and the
 ``<#…>`` patterns are private — reusable inside other patterns but not tokens
 themselves:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TOKEN #Literal :
        <TRUE: 'true'> #BooleanLiteral
@@ -62,7 +62,7 @@ themselves:
 The productions are short and mutually recursive — a ``Value`` may be an
 ``Array`` or a ``JSONObject``, each of which contains ``Value``\ s:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Root : Value! <EOF>! ;
    Value : <TRUE> | <FALSE> | <NULL> | <STRING_LITERAL> | <NUMBER> | Array | JSONObject ;

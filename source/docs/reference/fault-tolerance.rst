@@ -19,7 +19,7 @@ Enabling fault tolerance
 Fault tolerance is off unless you ask for it, because it changes the generated
 code. Turn it on with the ``FAULT_TOLERANT`` setting:
 
-.. code-block:: text
+.. code-block:: ccc
 
    FAULT_TOLERANT;
 
@@ -38,7 +38,7 @@ A ``!`` after a token, a non-terminal, or a parenthesized group marks it as a
 inserts a placeholder and carries on. This grammar tolerates a missing closing
 parenthesis:
 
-.. code-block:: text
+.. code-block:: ccc
 
    FAULT_TOLERANT;
    TOKEN : <ID : (["a"-"z"])+ > | <LP : "("> | <RP : ")"> ;
@@ -65,7 +65,7 @@ For recovery that spans more than a single point, ``ATTEMPT`` wraps an
 expansion and pairs it with a ``RECOVER`` clause that runs if the attempted
 expansion fails:
 
-.. code-block:: text
+.. code-block:: ccc
 
    ATTEMPT Expression RECOVER ( skipToSemicolon() )
 
@@ -80,7 +80,7 @@ error occurs while the production is being parsed, the parser skips ahead to
 that recovery expansion — a natural way to resynchronize at a statement or
 declaration boundary:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Statement RECOVER_TO ";" : … ;
 

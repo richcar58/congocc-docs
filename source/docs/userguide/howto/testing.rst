@@ -12,7 +12,7 @@ Set ``TEST_PRODUCTION`` to a start production and ``TEST_EXTENSION`` to a file
 extension, and CongoCC generates a ready-to-run harness that parses every
 matching file under the paths you give it:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TEST_PRODUCTION = Root;
    TEST_EXTENSION  = json;

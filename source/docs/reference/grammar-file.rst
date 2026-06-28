@@ -24,7 +24,7 @@ block comments — and may appear anywhere whitespace is allowed.
 
 A small but complete grammar therefore looks like this:
 
-.. code-block:: text
+.. code-block:: ccc
 
    // settings
    PARSER_PACKAGE = "org.example.lang";
@@ -45,7 +45,7 @@ and settings become part of the including grammar.
 
 Give the file as a string literal path:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INCLUDE "common/Identifiers.ccc";
 
@@ -53,7 +53,7 @@ CongoCC ships several complete grammars that can be included by a built-in
 **alias** — a bare identifier rather than a path. For example, to build on the
 bundled Java grammar:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INCLUDE JAVA
 
@@ -66,7 +66,7 @@ identifier portion.
 A single ``INCLUDE`` may list fallback locations separated by ``!``; the first
 one that resolves is used:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INCLUDE "local/Java.ccc" ! JAVA
 
@@ -106,7 +106,7 @@ symbols come from ``#define`` directives or from the command line with ``-p``
 For example, this grammar defines the ``B`` token only when the ``EXTRA`` symbol
 is passed, and the ``J`` token only when generating Java:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TOKEN : <A : "a"> ;
 

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 110" font-family="sans-serif" font-size="14" role="img" aria-label="Parsing pipeline: input text to lexer to tokens to parser to syntax tree">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#555"/>
+    </marker>
+  </defs>
+  <g fill="#eef3fb" stroke="#3b6ea5" stroke-width="1.5">
+    <rect x="8"   y="34" width="122" height="42" rx="6"/>
+    <rect x="184" y="34" width="96"  height="42" rx="6"/>
+    <rect x="336" y="34" width="120" height="42" rx="6"/>
+    <rect x="512" y="34" width="96"  height="42" rx="6"/>
+    <rect x="664" y="34" width="128" height="42" rx="6"/>
+  </g>
+  <g fill="#1a1a1a" text-anchor="middle">
+    <text x="69"  y="60">input text</text>
+    <text x="232" y="60">Lexer</text>
+    <text x="396" y="60">tokens</text>
+    <text x="560" y="60">Parser</text>
+    <text x="728" y="60">syntax tree</text>
+  </g>
+  <g stroke="#555" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="132" y1="55" x2="182" y2="55"/>
+    <line x1="282" y1="55" x2="334" y2="55"/>
+    <line x1="458" y1="55" x2="510" y2="55"/>
+    <line x1="610" y1="55" x2="662" y2="55"/>
+  </g>
+</svg>

@@ -8,7 +8,7 @@ here, see the :doc:`/docs/reference/tree-building` reference.
 
 The running example is a tiny configuration language:
 
-.. code-block:: text
+.. code-block:: ccc
 
    PARSER_PACKAGE = "tree.test";
    SKIP : " " | "\t" | "\r" | "\n" ;
@@ -58,7 +58,7 @@ Give nodes the names the *consumer* of the tree wants to see, not necessarily
 the names that were convenient in the grammar. Renaming ``Pair`` to
 ``KeyValue`` makes the downstream code read well:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Pair #KeyValue : <ID> "=" Value ;
 

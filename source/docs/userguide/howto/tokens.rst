@@ -21,7 +21,7 @@ A pattern declared ``<#NAME : …>`` is private: a reusable building block that 
 not a token itself. Factoring a hard pattern into named pieces makes it
 readable, as the JSON number token shows:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TOKEN :
        <#DIGITS : (["0"-"9"])+ >

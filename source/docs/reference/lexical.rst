@@ -48,7 +48,7 @@ where ``KIND`` is one of the following keywords:
 The simplest possible token production lists one or more string literals or
 named patterns, separated by ``|`` and terminated with a semicolon:
 
-.. code-block:: text
+.. code-block:: ccc
 
    SKIP : " " | "\t" | "\r" | "\n" ;
 
@@ -108,7 +108,7 @@ Grouping, alternation, and repetition
 Putting these together, a typical identifier and a four-hex-digit escape look
 like this:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TOKEN :
        <IDENTIFIER : ["a"-"z","A"-"Z","_"] (["a"-"z","A"-"Z","0"-"9","_"])* >
@@ -137,7 +137,7 @@ The built-in token ``<EOF>`` matches the end of the input. Anchoring a start
 production with ``<EOF>`` forces the parser to consume the entire input rather
 than stopping after a valid prefix:
 
-.. code-block:: text
+.. code-block:: ccc
 
    NumberList : <NUMBER> ( <COMMA> <NUMBER> )* <EOF> ;
 
@@ -147,7 +147,7 @@ Case-insensitive matching
 Place ``[IGNORE_CASE]`` immediately after the kind keyword to make every
 pattern in that production match without regard to case:
 
-.. code-block:: text
+.. code-block:: ccc
 
    TOKEN [IGNORE_CASE] : <BEGIN : "begin"> | <END : "end"> ;
 
@@ -192,7 +192,7 @@ Specifying states
    A state prefix before the kind keyword lists the states a production belongs
    to:
 
-   .. code-block:: text
+   .. code-block:: ccc
 
       <COMMENT> SKIP : <~["\n"]> ;          // only in the COMMENT state
       <DEFAULT, COMMENT> TOKEN : … ;         // in both states
@@ -202,16 +202,23 @@ Switching states
    A trailing ``: NEXT_STATE`` after a token tells the lexer which state to
    enter *after* matching that token:
 
-   .. code-block:: text
+   .. code-block:: ccc
 
       SKIP : "#" : COMMENT ;                  // on '#', switch to COMMENT
       <COMMENT> SKIP : <~["\n"]> ;            // consume the comment body
       <COMMENT> SKIP : "\n" : DEFAULT ;       // newline ends the comment
 
+.. figure:: /_static/lexical-states.svg
+   :alt: State machine: DEFAULT switches to COMMENT on a "#" character, loops in
+         COMMENT on any non-newline character, and returns to DEFAULT on a newline.
+   :align: center
+
+   The three ``SKIP`` rules above, viewed as a lexical-state machine.
+
 The three rules above implement line comments without involving the parser at
 all. Combined with a couple of keyword and identifier tokens —
 
-.. code-block:: text
+.. code-block:: ccc
 
    PARSER_PACKAGE = "lex.test";
 

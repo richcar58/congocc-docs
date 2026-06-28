@@ -27,7 +27,7 @@ Put a ``!`` on the tokens whose absence should not derail the parse — typicall
 closing delimiters and statement terminators. A grammar that tolerates a missing
 closing parenthesis:
 
-.. code-block:: text
+.. code-block:: ccc
 
    FAULT_TOLERANT;
    Root : <LP> <ID> <RP>! <EOF> ;

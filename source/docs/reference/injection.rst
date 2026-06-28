@@ -12,7 +12,7 @@ A first injection
 
 This grammar gives its ``KeyValue`` node class a ``getKey()`` method:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Config : ( Pair )+ <EOF> ;
    Pair #KeyValue : <ID> "=" <NUM> ;
@@ -38,7 +38,7 @@ Anatomy of an injection
 The full form names a target and may supply imports, a superclass, interfaces,
 and a body of members:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INJECT TargetName :
        import java.util.List;
@@ -52,7 +52,7 @@ and a body of members:
 Every part is optional. A short injection that only sets a superclass needs no
 body at all:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INJECT MyNode : extends AbstractBaseNode
 
@@ -90,7 +90,7 @@ setting. The recognized hooks are:
    :doc:`tokenization-advanced`). Its signature takes and returns the base
    token type:
 
-   .. code-block:: text
+   .. code-block:: ccc
 
       INJECT PARSER_CLASS :
       {
@@ -119,7 +119,7 @@ Injected code is written in the target language, so an injection ties the
 grammar to that language. To keep a grammar usable for several targets, guard
 language-specific injections with the preprocessor —
 
-.. code-block:: text
+.. code-block:: ccc
 
    #if __java__
    INJECT PARSER_CLASS : { /* Java-specific members */ }

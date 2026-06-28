@@ -23,7 +23,7 @@ Start a token off with the ``DEACTIVATE_TOKENS`` setting, then turn it on for a
 specific expansion with an ``ACTIVATE_TOKENS`` prefix on a parenthesized group
 (``DEACTIVATE_TOKENS`` works the same way to turn one off):
 
-.. code-block:: text
+.. code-block:: ccc
 
    DEACTIVATE_TOKENS = KW;
    TOKEN : <KW : "begin"> | <ID : (["a"-"z"])+ > ;
@@ -49,7 +49,7 @@ actually allows it; elsewhere its text tokenizes by the other rules. This gives
 soft-keyword behavior without managing activation by hand. The pattern of a
 contextual token must be a plain string literal:
 
-.. code-block:: text
+.. code-block:: ccc
 
    CONTEXTUAL : <FROM : "from"> ;
    TOKEN : <ID : (["a"-"z"])+ > ;
@@ -65,7 +65,7 @@ text that satisfies its pattern rather than the longest. This is exactly what
 block comments need, so that ``/* … */`` ends at the first ``*/`` instead of the
 last:
 
-.. code-block:: text
+.. code-block:: ccc
 
    UNPARSED : <?BLOCK_COMMENT : "/*" (~[])* "*/" > ;
    TOKEN : <ID : (["a"-"z"])+ > ;
@@ -94,7 +94,7 @@ indentation-sensitive language, for instance. Declare such types with the
 ``EXTRA_TOKENS`` setting, and emit them from a ``TOKEN_HOOK`` (see
 :doc:`injection`), which can inspect each token and insert others around it:
 
-.. code-block:: text
+.. code-block:: ccc
 
    EXTRA_TOKENS = INDENT, DEDENT;
 

@@ -26,6 +26,7 @@ language-specific details see the Target Language Guide.
    :maxdepth: 1
    :caption: Appendices
 
+   appendices/construct-index
    appendices/meta-grammar
    appendices/legacy
    appendices/glossary

@@ -13,7 +13,7 @@ The default tree
 Out of the box, every production builds a node, and every token is a node too.
 Given this grammar:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Config : ( Pair )+ <EOF> ;
    Pair : <ID> "=" Value ;
@@ -91,7 +91,7 @@ Conditional nodes
    nodes the production produced. For example, ``#List(>1)`` builds a ``List``
    node only when it would hold more than one child:
 
-   .. code-block:: text
+   .. code-block:: ccc
 
       Root : Items <EOF> ;
       Items #List(>1) : ( <NUM> )+ ;

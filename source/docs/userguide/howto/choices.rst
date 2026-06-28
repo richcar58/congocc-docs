@@ -13,7 +13,7 @@ Generate the grammar and read the warnings. An ``Expansion is unreachable``
 warning at a choice means two branches begin with the same token, so the later
 branch can never be reached:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Entry : ( Declaration | Reference )+ <EOF> ;
    Declaration : <ID> <COLON> <ID> ;
@@ -25,7 +25,7 @@ Step 2: reach for ``=>||`` first
 The up-to-here marker handles the common case with the least ceremony. Put it
 in the alternative just past the point that makes the choice unambiguous:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Declaration : <ID> <COLON> =>|| <ID> ;
 

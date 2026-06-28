@@ -22,7 +22,7 @@ Writing the grammar
 
 Create a file called ``NumberList.ccc`` with the following contents:
 
-.. code-block:: text
+.. code-block:: ccc
 
    // NumberList.ccc -- a first CongoCC grammar.
    // It parses a comma-separated list of integers, such as "1, 2, 3".

@@ -9,7 +9,7 @@ assumes you have worked through the first tutorial.
 The grammar
 -----------
 
-.. code-block:: text
+.. code-block:: ccc
 
    PARSER_PACKAGE = "calc";
 

@@ -42,14 +42,14 @@ A soft keyword, two ways
 Suppose ``begin`` should be a keyword only in one place. With activation, you
 deactivate it globally and switch it on for the relevant expansion:
 
-.. code-block:: text
+.. code-block:: ccc
 
    DEACTIVATE_TOKENS = KW;
    Root : <ID> ACTIVATE_TOKENS KW ( <KW> ) <EOF> ;
 
 With a contextual token, you declare it and let the parser decide:
 
-.. code-block:: text
+.. code-block:: ccc
 
    CONTEXTUAL : <KW : "begin"> ;
 

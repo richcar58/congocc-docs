@@ -18,7 +18,7 @@ A setting is a name, an optional value, and a semicolon. The name is
 case-insensitive. The value may be omitted for a boolean (a bare name means
 *true*):
 
-.. code-block:: text
+.. code-block:: ccc
 
    FAULT_TOLERANT;                       // boolean shorthand for = true
    SMART_NODE_CREATION = false;          // boolean

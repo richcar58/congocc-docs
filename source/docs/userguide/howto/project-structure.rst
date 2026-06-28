@@ -12,7 +12,7 @@ separate files and pulling them in with ``INCLUDE`` (see
 :doc:`/docs/reference/grammar-file`). A common split is to keep the lexical
 grammar in its own file, or to build on one of the bundled grammars by alias:
 
-.. code-block:: text
+.. code-block:: ccc
 
    INCLUDE "Lexer.inc.ccc";
    INCLUDE JAVA              // the bundled Java grammar, by alias
@@ -25,7 +25,7 @@ the preprocessor and select them at generation time with ``-p``. The predefined
 ``__java__`` / ``__python__`` / ``__csharp__`` / ``__rust__`` symbols let one
 grammar carry target-specific pieces:
 
-.. code-block:: text
+.. code-block:: ccc
 
    #if __python__
    INJECT PARSER_CLASS : { /* Python-only members */ }

@@ -21,7 +21,7 @@ It breaks down when two alternatives can begin with the same token. Consider a
 loop that chooses between a declaration (``x : y``) and a bare reference
 (``x``), both of which start with an identifier:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Entry : ( Declaration | Reference )+ <EOF> ;
    Declaration : <ID> <COLON> <ID> ;
@@ -46,7 +46,7 @@ inside an expansion, it means *scan the input up to this point to decide whether
 to take this path.* Mark ``Declaration`` just after the part that makes it
 unambiguous — the colon:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Entry : ( Declaration | Reference )+ <EOF> ;
    Declaration : <ID> <COLON> =>|| <ID> ;
@@ -84,7 +84,7 @@ of an alternative, ending with ``=>`` before the expansion it guards. The same
 example written with ``SCAN`` places the lookahead condition at the choice
 point itself:
 
-.. code-block:: text
+.. code-block:: ccc
 
    Entry : ( SCAN <ID> <COLON> => Declaration | Reference )+ <EOF> ;
 
@@ -141,7 +141,7 @@ The most common use is to forbid re-entering a production that is already
 active. This enters ``Foo`` only if ``Foo`` is not already somewhere above on
 the stack:
 
-.. code-block:: text
+.. code-block:: ccc
 
    [ SCAN ~\...\Foo => Foo ]
 
@@ -158,7 +158,7 @@ Assertions
 raises an error if it fails. ``ENSURE`` is evaluated during lookahead, to steer
 a choice. Both accept either a semantic condition or a syntactic expansion:
 
-.. code-block:: text
+.. code-block:: ccc
 
    ASSERT { depth < MAX_DEPTH } : "Nesting too deep"     // semantic, with a message
    ASSERT ~( <ELSE> )                                    // syntactic: assert no else follows
@@ -181,7 +181,7 @@ Forcing a failure
 branch that should never be reached, or to give a better message than the
 default for known-bad input:
 
-.. code-block:: text
+.. code-block:: ccc
 
    ( "(" Expression ")" | FAIL "Expected a parenthesized expression" )
 
