@@ -78,16 +78,23 @@ The generated crate offers three levels of AST processing:
   ``reparse()`` to validate the edited tree by running it back through the
   parser.
 
+See `README_RUST <https://github.com/congo-cc/congo-parser-generator/blob/master/README_RUST.md>`_
+for more information on these techniques and pointers to example code.
+
+
 Injected code
 -------------
 
 Because the arena AST has no per-type node structs, ``INJECT`` blocks cannot be
 inserted into node classes the way they are for the other targets. CongoCC
 translates them as far as it can into ``inject.rs`` and records what needs
-hand-finishing in ``FIXME.md``; see :doc:`injected-code`. Pure-syntax grammars
-(JSON, Lua, CICS, the arithmetic examples) generate fully working crates with no
+hand-finishing in ``FIXME.md``; see :doc:`injected-code`. 
+
+CongoCC ships with a number of Rust example grammars.  Pure-syntax grammars
+(JSON, Lua, CICS, SqlExpr, the arithmetic examples) generate fully working crates with no
 manual step; the large injection-heavy grammars (Java, C#, Python) generate but
-need their injected logic ported to Rust by hand.
+need their injected logic ported to Rust by hand.  See 
+`README_RUST <https://github.com/congo-cc/congo-parser-generator/blob/master/README_RUST.md>`_.
 
 Optional serialization (``serde``)
 ----------------------------------
