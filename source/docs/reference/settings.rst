@@ -247,6 +247,10 @@ Deprecated and ignored
    Accepted for backward compatibility but unused; use ``BASE_NODE_CLASS``
    instead.
 
+``TOKEN_MANAGER_USES_PARSER``
+   Accepted for backward compatibility but unused — the legacy name for the
+   lexer was the "token manager". Use ``LEXER_USES_PARSER`` instead.
+
 The many configuration options of legacy JavaCC that CongoCC removed entirely —
 ``STATIC``, a global ``LOOKAHEAD``, the ambiguity-check options, and others —
 are listed with their replacements in :doc:`appendices/legacy`.
