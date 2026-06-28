@@ -61,3 +61,7 @@ Below are answers to the 7 questions.
 7. Rust support is no longer provisional.  We even have a grammar for the Rust language itself (examples/rust/Rust.cc).
 
 When developing the plan for review, note that source code changes to CongoCC have been committed in the past 2 weeks. 
+
+# Examples Matrix
+
+Please create a targets/examples-matrix.rst documentation file that describes each of the examples in CongoCC's examples subtree.  For each example, list the grammar file(s), a short description of the language the grammars define, and the target languages for which parsers are generated.  Integrate the new documentation file into the Target Language Guide just before the build-and-runtime.rst file.  Before generating the documentation, please present a plan for review. 

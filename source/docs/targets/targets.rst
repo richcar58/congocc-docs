@@ -14,4 +14,5 @@ the runtime. This guide centralizes everything target-specific.
    python
    csharp
    rust
+   examples-matrix
    build-and-runtime
